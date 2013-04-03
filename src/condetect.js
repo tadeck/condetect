@@ -45,14 +45,19 @@
         var req, result, spdy_header;
         req = new window.XMLHttpRequest();
         req.open('GET', location, false); // synchronous check
-        req.send(null);
-        // making synchronous call, so no need for event-based approach
-        spdy_header = req.getResponseHeader('X-Firefox-Spdy');
-        if (spdy_header === null) {
-            result = false;
-        } else {
-            // header found and is text, check if is bigger than "1"
-            result = spdy_header > 1;
+        try {
+            req.send(null);
+            // making synchronous call, so no need for event-based approach
+            spdy_header = req.getResponseHeader('X-Firefox-Spdy');
+            if (spdy_header === null) {
+                result = false;
+            } else {
+                // header found and is text, check if is bigger than "1"
+                result = spdy_header > 1;
+            }
+        } catch (e) {
+            that.error('Issue making AJAX call: ' + e.toString());
+            result = undefined;
         }
         return result;
     };
@@ -92,7 +97,6 @@
         } else {
             result = that.ajaxCallUsesSPDY(that.getLocation(window_obj));
         }
-        that.log('Check for SPDY shows: ' + result);
         return result;
     };
 
