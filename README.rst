@@ -27,10 +27,11 @@ Features
 The following features are available:
 
 - detect if current connection uses SPDY protocol,
+- detect if current connection uses SSL,
 
 The following features are planned:
 
-- connection features detection (eg. connection through SSL, compression),
+- connection features detection (eg. compression),
 - connectivity issues detection,
 - ability to work with separate AJAX calls or by intercepting existing ones,
 - configurable endpoints for AJAX tests,
