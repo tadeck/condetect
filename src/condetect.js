@@ -42,7 +42,8 @@
      * @returns {boolean|undefined}
      */
     that.ajaxCallUsesSPDY = function (location) {
-        var req, result, spdy_header;
+        var opera_check, req, result, spdy_header;
+        opera_check = /^:?version: /m; // Opera seems to add this header
         req = new window.XMLHttpRequest();
         req.open('GET', location, false); // synchronous check
         try {
@@ -51,6 +52,10 @@
             spdy_header = req.getResponseHeader('X-Firefox-Spdy');
             if (spdy_header === null) {
                 result = false;
+                // try Opera check anyway:
+                if (opera_check.test(req.getAllResponseHeaders())) {
+                    result = true; // match!
+                }
             } else {
                 // header found and is text, check if is bigger than "1"
                 result = spdy_header > 1;

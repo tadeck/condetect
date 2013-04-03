@@ -95,6 +95,7 @@ The module has been tested so far with:
 
 - Google Chrome 25,
 - Mozilla Firefox 18,
+- Opera 12.14,
 
 License
 =======
