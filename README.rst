@@ -100,8 +100,12 @@ The module has been tested so far with:
 License
 =======
 
-The license has not been chosen yet. You can use the library for free, modify
-it and distribute. However, please include the reference to the original
-library or its author. The library is provided free of charge and without any
-guarantee, of any kind. In return please consider giving feedback on it, eg.
-testing it for different browsers and providing the results and/or fixes.
+The library is distributed under MIT license and is available in the
+"``LICENSE.rst``" file, in the same directory as this file.
+
+You can use the library for free, modify it and distribute. However, please
+include the reference to the original library and its author.
+
+The library is provided free of charge and without any guarantee, of any kind.
+In return please consider giving feedback on it, eg. testing it for different
+browsers and providing the results and/or fixes.
