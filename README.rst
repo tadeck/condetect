@@ -93,8 +93,8 @@ encouraged.
 
 The module has been tested so far with:
 
-- Google Chrome 25,
-- Mozilla Firefox 18,
+- Google Chrome 25 to 43 (latest),
+- Mozilla Firefox 18 to 38 (latest),
 - Opera 12.14,
 
 License
